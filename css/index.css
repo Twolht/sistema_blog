@@ -1,0 +1,171 @@
+:root{
+    --background-body: #f4f4f4;
+    --background-tarjeta-formulario-datos: #c3e6bd;
+    --background-form-formulario-foro: #c3e6bd;
+    --background-tarjeta-foro: #f1eedb;
+    --background-textarea-comentario: #f1e3c9;
+    --background-tarjeta-comentario: #ecd3a5;
+    --background-textarea-titulo: #eeeeee;
+    --background-textarea-descripcion: #eeeeee;
+    --color-title-primario: #372e2e;
+    --color-primario: #333333;
+    --color-secundario: #f7f4f4;
+    --background-button-primario: #56944dec;
+    --background-button-secundario: #e4e4e4;
+    --background-icon-hover: #c1c0c0;
+    --background-icon: #e3ecda;
+    --background-button-hover-primario: #418748f2;
+    --background-button-hover-secundario: #d3d3d3;
+    --border-principal: 1px solid #cdcebe;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Google Sans", sans-serif;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    background: var(--background-body);
+    width: 100%;
+    height: 100%;
+}
+
+#app{
+    width: 100%;
+    height: 100%;
+}
+
+
+.tarjeta-formulario-datos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 100%;
+    height: 100%;
+}
+.tarjeta-formulario-datos .content-form{
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    flex: 0 0 350px;
+    min-height: auto;
+    border-radius: 8px 10px 9px 7px;
+    background: var(--background-tarjeta-formulario-datos);
+    padding: 25px;
+    
+}
+.tarjeta-formulario-datos .content-form .content-title{
+    display: flex;
+    flex: 0 0 60%;
+    min-height: auto;
+    padding: 5px 0 20px 0;
+}
+.tarjeta-formulario-datos .content-form .content-title p{
+    font-size: 1.8em;
+    font-weight: 500;
+    color: var(--color-title-primario)
+}
+
+
+
+.tarjeta-formulario-datos .content-form .content-text-nombre{
+    display: flex;
+    flex: 0 0 100%;
+    min-height: auto;
+}
+.tarjeta-formulario-datos .content-form .content-text-nombre p{
+    font-size: 1em;
+    color: var(--color-primario);
+    font-weight: 500;
+}
+
+
+
+.tarjeta-formulario-datos .content-form .content-input-nombre{
+    display: flex;
+    flex: 0 0 100%;
+    min-height: auto;
+    padding: 10px 0
+}
+.tarjeta-formulario-datos .content-form .content-input-nombre input{
+    width: 100%;
+    min-height: 35px;
+    border-radius: 4px 16px 14px 4px;
+    outline: none;
+    border: 1px solid #000000;
+    padding: 0 0 0 15px;
+}
+
+
+
+.tarjeta-formulario-datos .content-form .content-text-apellido{
+    display: flex;
+    flex: 0 0 100%;
+    min-height: auto;
+}
+.tarjeta-formulario-datos .content-form .content-text-apellido p{
+    font-size: 1em;
+    color: var(--color-primario);
+    font-weight: 500;
+}
+
+
+
+.tarjeta-formulario-datos .content-form .content-input-apellido{
+    display: flex;
+    flex: 0 0 100%;
+    min-height: auto;
+    padding: 10px 0;
+}
+.tarjeta-formulario-datos .content-form .content-input-apellido input{
+    width: 100%;
+    min-height: 35px;
+    border-radius: 4px 16px 14px 4px;
+    outline: none;
+    border: 1px solid #000000;
+    padding: 0 0 0 15px;
+}
+
+
+.tarjeta-formulario-datos .content-form .content-button{
+    display: flex;
+    flex: 0 0 100%;
+    min-height: auto;
+    justify-content: flex-end;
+    padding: 20px 0 5px 0;
+}
+.tarjeta-formulario-datos .content-form .content-button button{
+    padding: 10px 15px;
+    border-radius: 6px;
+    outline: none;
+    border: 1px solid #000000;
+    background: var(--background-button-primario);
+    color: var(--color-secundario);
+    cursor: pointer;
+}
+
+
+/*
+---HOVER---*/
+#comenzar:hover{
+    background: var(--background-button-hover-primario);
+}
+#icon-img:hover{
+    background: var(--background-icon-hover) !important;
+}
+
+#button-foro:hover{
+    background: var(--background-button-hover-primario);
+}
+#button-eliminar:hover{
+    background: var(--background-icon-hover);
+}
+#button-comentario:hover{
+    background: var(--background-button-hover-secundario) !important;
+}
