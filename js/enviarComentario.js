@@ -2,7 +2,7 @@ import { obtenerIndice, obtenerFecha} from './index.js';
 import { nombreActual, apellidoActual} from './state.js';
 import { tarjetaComentario } from './tarjetaComentario.js';
 
-export function enviarComentario(e, id, foros){
+export function enviarComentario(e, id, blogs){
     e.preventDefault();
 
     // Obtener valor textarea del comentario
@@ -11,7 +11,7 @@ export function enviarComentario(e, id, foros){
     if(textarea.length < 1){
         return alert('Escribe algun comentario');
     }
-    // Obtenemos el indice de la lista foro segun id
+    // Obtenemos el indice de la lista blog segun id
     let i = obtenerIndice(id);
 
     // Diccionario de persona quien comenta
@@ -21,9 +21,9 @@ export function enviarComentario(e, id, foros){
         'comentario': textarea,
         'fecha_comentario': obtenerFecha()
     }
-    // Agregar comentario a foros
+    // Agregar comentario a blogs
     if(i || i>=0){
-        foros[i].comentarios.push(dic);
+        blogs[i].comentarios.push(dic);
     }else{
         return alert('No se puede agregar el comentario');
     }

@@ -1,19 +1,19 @@
 import { urlImagen } from "./state.js";
 import { enviarComentario } from "./enviarComentario.js";
-import { eliminarForo } from "./eliminarForo.js";
+import { eliminarBlog } from "./eliminarBlog.js";
 
 
-export function tarjetaForo(id, 
+export function tarjetaBlog(id, 
     nombre, 
     apellido, 
     titulo, 
     descripcion, 
     imagen, 
     fechaPublicacion,
-    foros){
+    blogs){
     // Crear elementos 
-    let tarjetaForo = document.createElement('div');
-    let formTarjetaForo = document.createElement('form');
+    let tarjetaBlog = document.createElement('div');
+    let formTarjetaBlog = document.createElement('form');
     let contentButtonEliminar = document.createElement('div');
     let buttonEliminar = document.createElement('i');
     let contentPublicacion = document.createElement('div');
@@ -33,9 +33,9 @@ export function tarjetaForo(id,
     let contentComentarios = document.createElement('div');
 
     // Definir clase y id para cada elemento
-    tarjetaForo.classList.add('tarjeta-foro');
-    tarjetaForo.setAttribute('id', `tarjeta-foro-${id}`);
-    formTarjetaForo.classList.add('form-tarjeta-foro');
+    tarjetaBlog.classList.add('tarjeta-blog');
+    tarjetaBlog.setAttribute('id', `tarjeta-blog-${id}`);
+    formTarjetaBlog.classList.add('form-tarjeta-blog');
     contentButtonEliminar.classList.add('content-button-eliminar');
     buttonEliminar.setAttribute('id', 'button-eliminar');
     contentPublicacion.classList.add('content-publicacion');
@@ -67,22 +67,22 @@ export function tarjetaForo(id,
 
     //--Eventos--
     // Llamar a enviarComentario cuando el formulario sea enviad (submit)
-    formTarjetaForo.addEventListener('submit', function(event){
-        enviarComentario(event, id, foros);
+    formTarjetaBlog.addEventListener('submit', function(event){
+        enviarComentario(event, id, blogs);
     });
-    // Llamar a eliminarForo cuando haga click en buttonEliminar
-    buttonEliminar.addEventListener('click', () => eliminarForo(id,foros));
+    // Llamar a eliminarBlog cuando haga click en buttonEliminar
+    buttonEliminar.addEventListener('click', () => eliminarBlog(id,blogs));
 
 
     // Estilo elementos
-    tarjetaForo.setAttribute('style', 
+    tarjetaBlog.setAttribute('style', 
         `width: 350px;
         min-height: min-content;
         max-height: auto;
         margin : 20px;
         `
     )
-    formTarjetaForo.setAttribute('style',
+    formTarjetaBlog.setAttribute('style',
         `display: flex;
         flex-wrap: wrap;
         align-content: flex-start;
@@ -92,7 +92,7 @@ export function tarjetaForo(id,
         max-height: 100%;
         border-radius: 5px 7px 6px 5px;
         padding: 25px;
-        background: var(--background-tarjeta-foro);
+        background: var(--background-tarjeta-blog);
         `
     )
     contentButtonEliminar.setAttribute('style', 
@@ -217,21 +217,21 @@ export function tarjetaForo(id,
     contentPublicacion.appendChild(pPublicacion);
     contentButtonEliminar.appendChild(buttonEliminar);
 
-    formTarjetaForo.appendChild(contentButtonEliminar);
-    formTarjetaForo.appendChild(contentPublicacion);
-    formTarjetaForo.appendChild(contentFechaPublicacion);
-    formTarjetaForo.appendChild(contentTitulo);
-    formTarjetaForo.appendChild(contentDescripcion);
+    formTarjetaBlog.appendChild(contentButtonEliminar);
+    formTarjetaBlog.appendChild(contentPublicacion);
+    formTarjetaBlog.appendChild(contentFechaPublicacion);
+    formTarjetaBlog.appendChild(contentTitulo);
+    formTarjetaBlog.appendChild(contentDescripcion);
     if(urlImagen){
-        formTarjetaForo.appendChild(contentImagen);
+        formTarjetaBlog.appendChild(contentImagen);
     }
-    formTarjetaForo.appendChild(contentTextareaComentario);
-    formTarjetaForo.appendChild(contentButtonComentario);
-    formTarjetaForo.appendChild(contentComentarios);
+    formTarjetaBlog.appendChild(contentTextareaComentario);
+    formTarjetaBlog.appendChild(contentButtonComentario);
+    formTarjetaBlog.appendChild(contentComentarios);
 
 
-    tarjetaForo.appendChild(formTarjetaForo);
+    tarjetaBlog.appendChild(formTarjetaBlog);
 
-    return tarjetaForo;
+    return tarjetaBlog;
 
 }

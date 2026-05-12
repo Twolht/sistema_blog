@@ -1,15 +1,15 @@
 import { formularioPersonalEnviado } from './state.js';
-import { enviarForo } from './enviarForo.js';
+import { enviarBlog } from './enviarBlog.js';
 import { abrirInputImagen } from './index.js';
 import { obtenerImagen } from './obtenerImagen.js';
 import { urlImagen } from './state.js';
 
-export function tarjetaFormularioForo(foros){
+export function tarjetaFormularioBlog(blogs){
     if(formularioPersonalEnviado){
         // Crear elementos 
-        let tarjetaFormularioForo = document.createElement('section');
-        let contentTarjetasForos = document.createElement('section');
-        let formFormularioForo = document.createElement('form');
+        let tarjetaFormularioBlog = document.createElement('section');
+        let contentTarjetasBlogs = document.createElement('section');
+        let formFormularioBlog = document.createElement('form');
         let contentTitle = document.createElement('div');
         let contentTextareaTitle = document.createElement('div');
         let contentTextareaDescripcion = document.createElement('div');
@@ -27,11 +27,11 @@ export function tarjetaFormularioForo(foros){
         let buttonSubmit = document.createElement('button');
 
         // Definir clases a cada elemento
-        tarjetaFormularioForo.classList.add('tarjeta-formulario-foro');
-        contentTarjetasForos.classList.add('content-tarjetas-foros');
-        contentTarjetasForos.setAttribute('id', 'content-tarjetas-foros');
-        formFormularioForo.classList.add('form-formulario-foro');
-        formFormularioForo.setAttribute('id','form-formulario-foro');
+        tarjetaFormularioBlog.classList.add('tarjeta-formulario-blog');
+        contentTarjetasBlogs.classList.add('content-tarjetas-blogs');
+        contentTarjetasBlogs.setAttribute('id', 'content-tarjetas-blogs');
+        formFormularioBlog.classList.add('form-formulario-blog');
+        formFormularioBlog.setAttribute('id','form-formulario-blog');
         contentTitle.classList.add('content-title');
         contentTextareaDescripcion.classList.add('content-textarea-descripcion');
         contentEstadoImagen.classList.add('content-estado-imagen');
@@ -42,14 +42,14 @@ export function tarjetaFormularioForo(foros){
 
 
         // Definir las propiedades de cada elemento
-        pTitle.textContent = 'Aqui puedes empezar a crear un nuevo foro';
+        pTitle.textContent = 'Aqui puedes empezar a crear un nuevo blog';
         textareaTitle.setAttribute('maxlength', '150');
         textareaTitle.setAttribute('placeholder', 'Ingrese el titulo');
         textareaTitle.setAttribute('id', 'textarea-title');
         textareaDescripcion.setAttribute('maxlength', '600');
         textareaDescripcion.setAttribute('rows', '2');
         textareaDescripcion.setAttribute('id', 'textarea-descripcion');
-        textareaDescripcion.setAttribute('placeholder', 'Descripcion del foro');
+        textareaDescripcion.setAttribute('placeholder', 'Descripcion del blog');
         estadoImagen.textContent = urlImagen ? 'Imagen cargada' : 'No hay imagen cargada';
         iconImagen.setAttribute('id', 'icon-imagen');
         iconImagen.setAttribute('id', 'icon-img')
@@ -58,13 +58,13 @@ export function tarjetaFormularioForo(foros){
         inputImagen.setAttribute('accept', 'image/*');
         contentButtonSubmit.setAttribute('id', 'submit');
         buttonSubmit.setAttribute('type', 'submit');
-        buttonSubmit.setAttribute('id', 'button-foro')
-        buttonSubmit.textContent = 'Publicar foro';
+        buttonSubmit.setAttribute('id', 'button-blog')
+        buttonSubmit.textContent = 'Publicar fblog';
 
         //--Eventos--
-        // LLamar a enviarForo cuando publicar foro
-        formFormularioForo.addEventListener('submit', function(event){
-            enviarForo(event, foros);
+        // LLamar a enviarBlog cuando publicar blog
+        formFormularioBlog.addEventListener('submit', function(event){
+            enviarBlog(event, blogs);
         });
 
         // Llamar a abrirInputImagen cuando click en  icono
@@ -74,14 +74,14 @@ export function tarjetaFormularioForo(foros){
         inputImagen.addEventListener('change', obtenerImagen);
 
         // Estilo elementos (css)
-        tarjetaFormularioForo.setAttribute('style', 
+        tarjetaFormularioBlog.setAttribute('style', 
             `display: flex; 
             justify-content: center; 
             width: 100%;
             min-height: auto;
             padding: 20px 0`)
 
-        contentTarjetasForos.setAttribute('style', 
+        contentTarjetasBlogs.setAttribute('style', 
             `display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -92,7 +92,7 @@ export function tarjetaFormularioForo(foros){
         )
             
         
-        formFormularioForo.setAttribute('style',
+        formFormularioBlog.setAttribute('style',
             `display: flex; 
             align-content: flex-start; 
             flex-wrap: wrap;
@@ -100,7 +100,7 @@ export function tarjetaFormularioForo(foros){
             max-width: 400px;
             min-height: auto;
             border-radius: 7px 12px 9px 8px;
-            background: var(--background-form-formulario-foro);
+            background: var(--background-form-formulario-blog);
             padding: 25px;`
         )
 
@@ -221,18 +221,18 @@ export function tarjetaFormularioForo(foros){
         contentTextareaTitle.appendChild(textareaTitle);
         contentTitle.appendChild(pTitle);
 
-        formFormularioForo.appendChild(contentTitle);
-        formFormularioForo.appendChild(contentTextareaTitle);
-        formFormularioForo.appendChild(contentTextareaDescripcion);
-        formFormularioForo.appendChild(contentEstadoImagen);
-        formFormularioForo.appendChild(contentIconImagen);
-        formFormularioForo.appendChild(inputImagen);
-        formFormularioForo.appendChild(contentButtonSubmit);
+        formFormularioBlog.appendChild(contentTitle);
+        formFormularioBlog.appendChild(contentTextareaTitle);
+        formFormularioBlog.appendChild(contentTextareaDescripcion);
+        formFormularioBlog.appendChild(contentEstadoImagen);
+        formFormularioBlog.appendChild(contentIconImagen);
+        formFormularioBlog.appendChild(inputImagen);
+        formFormularioBlog.appendChild(contentButtonSubmit);
 
-        tarjetaFormularioForo.appendChild(formFormularioForo);
+        tarjetaFormularioBlog.appendChild(formFormularioBlog);
 
-        app.appendChild(tarjetaFormularioForo);
-        app.appendChild(contentTarjetasForos);
+        app.appendChild(tarjetaFormularioBlog);
+        app.appendChild(contentTarjetasBlogs);
 
         return app;
     }else{

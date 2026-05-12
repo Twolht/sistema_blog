@@ -1,8 +1,8 @@
 :root{
     --background-body: #f4f4f4;
     --background-tarjeta-formulario-datos: #c3e6bd;
-    --background-form-formulario-foro: #c3e6bd;
-    --background-tarjeta-foro: #f1eedb;
+    --background-form-formulario-blog: #c3e6bd;
+    --background-tarjeta-blog: #f1eedb;
     --background-textarea-comentario: #f1e3c9;
     --background-tarjeta-comentario: #ecd3a5;
     --background-textarea-titulo: #eeeeee;
@@ -161,7 +161,7 @@ body{
     background: var(--background-icon-hover) !important;
 }
 
-#button-foro:hover{
+#button-blog:hover{
     background: var(--background-button-hover-primario);
 }
 #button-eliminar:hover{

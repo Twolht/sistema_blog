@@ -1,9 +1,9 @@
 import { obtenerFecha } from './index.js';
-import { cargarTarjetaForo } from './cargarTarjetaForo.js';
+import { cargarTarjetaBlog } from './cargarTarjetaBlog.js';
 import { nombreActual, apellidoActual, setUrlImagen, setImagenActual, urlImagen} from './state.js';
 
 
-export function enviarForo(e, foros){
+export function enviarBlog(e, blogs){
     e.preventDefault();
 
     // Obtenemos la informacion obtenida de textarea descripcion
@@ -31,12 +31,12 @@ export function enviarForo(e, foros){
         'comentarios': []
     };
 
-    // Guardamos los datos del foro a la lista
-    foros.push(dic);
+    // Guardamos los datos del blog a la lista
+    blogs.push(dic);
     
 
     // Renderizar en html las tarjetas
-    cargarTarjetaForo(dic, foros);
+    cargarTarjetaBlog(dic, blogs);
 
     // Vaciar el formulario
     document.getElementById('textarea-title').value = '';

@@ -1,9 +1,9 @@
-import { tarjetaFormularioForo } from "./tarjetaFormularioForo.js";
+import { tarjetaFormularioBlog } from "./tarjetaFormularioBlog.js";
 import { setFormularioPersonalEnviado, setApellidoActual, setNombreActual} from "./state.js";
 
 // Elemento principal de renderizacion
 let app = document.getElementById('app');
-let foros = [];
+let blogs = [];
 
 function pedirDatosFormulario(event){
     // Evitar que se recargue la pagina
@@ -30,14 +30,14 @@ function pedirDatosFormulario(event){
     let tarjetaFormulario = document.getElementById('tarjeta-formulario-datos');
     tarjetaFormulario.remove();
 
-    tarjetaFormularioForo(foros);
+    tarjetaFormularioBlog(blogs);
 
     return;
 }
 
 export function obtenerIndice(id){
     // Obtener el indice de la lista mediante el identificador unico
-    let listaIndice = foros.map((foro, indice) => {if(id === foro.id){return indice}else{return null}});
+    let listaIndice = blogs.map((blog, indice) => {if(id === blog.id){return indice}else{return null}});
     // Dejar solo un elemento en la lista
     let filtarLista = listaIndice.filter((lista) => lista !== null);
     // Obtenemos el indice definitivo
