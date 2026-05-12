@@ -96,7 +96,8 @@ export function tarjetaFormularioForo(foros){
             `display: flex; 
             align-content: flex-start; 
             flex-wrap: wrap;
-            flex: 0 0 40vw; 
+            flex: 0 1 80%;
+            max-width: 400px;
             min-height: auto;
             border-radius: 7px 12px 9px 8px;
             background: var(--background-form-formulario-foro);
