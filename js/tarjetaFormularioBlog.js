@@ -59,7 +59,7 @@ export function tarjetaFormularioBlog(blogs){
         contentButtonSubmit.setAttribute('id', 'submit');
         buttonSubmit.setAttribute('type', 'submit');
         buttonSubmit.setAttribute('id', 'button-blog')
-        buttonSubmit.textContent = 'Publicar fblog';
+        buttonSubmit.textContent = 'Publicar blog';
 
         //--Eventos--
         // LLamar a enviarBlog cuando publicar blog
